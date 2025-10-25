@@ -67,7 +67,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background floating-particles">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
@@ -75,14 +75,14 @@ const Index = () => {
           <div className="text-center space-y-6 animate-slide-up">
             {/* Profile Photo */}
             <div className="flex justify-center mb-8">
-              <div className="relative animate-float">
+              <div className="relative animate-float hover-glow-intense pulse-glow">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-glow-pulse blur-xl opacity-75" />
                 <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary">
                   <div className="rounded-full p-2 bg-background">
                     <img
                       src={profilePhoto}
                       alt="Felix Bastian"
-                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background"
+                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background hover-rotate"
                     />
                   </div>
                 </div>
@@ -90,24 +90,24 @@ const Index = () => {
                 <div className="absolute -inset-8 rounded-full border border-secondary/20 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-glow-green">
+            <h1 className="text-5xl md:text-7xl font-bold text-glow-green hover-shake cursor-default">
               Felix Bastian
             </h1>
-            <p className="text-2xl md:text-3xl text-secondary text-glow-blue font-semibold">
+            <p className="text-2xl md:text-3xl text-secondary text-glow-blue font-semibold wave-effect cursor-default">
               Assistente de TI & Desenvolvedor
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto hover:text-primary transition-colors duration-300">
               Profissional especializado em suporte técnico, análise de redes, desenvolvimento frontend
               e soluções tecnológicas eficientes
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-6">
-              <Button asChild className="glow-green hover:scale-105 transition-transform">
+              <Button asChild className="btn-glow glow-green hover:scale-110 transition-all duration-300">
                 <a href="mailto:Fxbastian88@gmail.com">
                   <Mail className="mr-2 h-4 w-4" />
                   Entre em Contato
                 </a>
               </Button>
-              <Button asChild variant="outline" className="border-glow-blue hover:glow-blue transition-all">
+              <Button asChild variant="outline" className="btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
                 <a href="https://github.com/bastianFlex" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
                   Projetos
@@ -138,22 +138,22 @@ const Index = () => {
       {/* Skills Section */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green">Habilidades Técnicas</h2>
+          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Habilidades Técnicas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
                 <Card
                   key={index}
-                  className="p-6 border-glow-green hover:glow-green transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm"
+                  className="p-6 border-glow-green card-hover hover-glow-intense wave-effect bg-card/50 backdrop-blur-sm group"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-semibold text-primary">{skill.name}</h3>
+                    <Icon className="h-6 w-6 text-primary group-hover:scale-125 transition-transform duration-300" />
+                    <h3 className="text-xl font-semibold text-primary group-hover:text-glow-green transition-all duration-300">{skill.name}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {skill.tech.map((tech, i) => (
-                      <Badge key={i} variant="secondary" className="bg-secondary/20 text-secondary">
+                      <Badge key={i} variant="secondary" className="bg-secondary/20 text-secondary hover:bg-secondary/40 hover:scale-105 transition-all duration-200 cursor-default">
                         {tech}
                       </Badge>
                     ))}
@@ -168,27 +168,27 @@ const Index = () => {
       {/* Experience Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green">Experiência Profissional</h2>
+          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Experiência Profissional</h2>
           <div className="space-y-6">
             {experience.map((exp, index) => (
               <Card
                 key={index}
-                className="p-8 border-glow-blue hover:glow-blue transition-all duration-300 bg-card/50 backdrop-blur-sm"
+                className="p-8 border-glow-blue card-hover hover-glow-blue-intense wave-effect bg-card/50 backdrop-blur-sm group"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-primary">{exp.company}</h3>
-                    <p className="text-xl text-secondary">{exp.role}</p>
+                    <h3 className="text-2xl font-bold text-primary group-hover:text-glow-blue transition-all duration-300">{exp.company}</h3>
+                    <p className="text-xl text-secondary group-hover:scale-105 transition-transform duration-300">{exp.role}</p>
                   </div>
-                  <Badge variant="outline" className="mt-2 md:mt-0 w-fit border-secondary text-secondary">
+                  <Badge variant="outline" className="mt-2 md:mt-0 w-fit border-secondary text-secondary hover:border-primary hover:text-primary transition-all duration-300">
                     {exp.location}
                   </Badge>
                 </div>
                 <ul className="space-y-2 mt-4">
                   {exp.tasks.map((task, i) => (
-                    <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                      <span className="text-primary mt-1">▹</span>
-                      <span>{task}</span>
+                    <li key={i} className="flex items-start gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 group/item">
+                      <span className="text-primary mt-1 group-hover/item:scale-125 transition-transform duration-200">▹</span>
+                      <span className="group-hover/item:translate-x-1 transition-transform duration-200">{task}</span>
                     </li>
                   ))}
                 </ul>
@@ -204,16 +204,16 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Education */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green">Formação</h2>
+              <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Formação</h2>
               <div className="space-y-4">
                 {education.map((edu, index) => (
                   <Card
                     key={index}
-                    className="p-6 border-glow-green bg-card/50 backdrop-blur-sm hover:glow-green transition-all"
+                    className="p-6 border-glow-green bg-card/50 backdrop-blur-sm card-hover hover-glow-intense wave-effect group"
                   >
-                    <h3 className="text-lg font-semibold text-foreground">{edu.course}</h3>
-                    <p className="text-muted-foreground">{edu.institution}</p>
-                    <Badge variant="secondary" className="mt-2 bg-primary/20 text-primary">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-glow-green transition-all duration-300">{edu.course}</h3>
+                    <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{edu.institution}</p>
+                    <Badge variant="secondary" className="mt-2 bg-primary/20 text-primary hover:scale-105 transition-transform duration-200">
                       {edu.status}
                     </Badge>
                   </Card>
@@ -223,13 +223,13 @@ const Index = () => {
 
             {/* Certifications */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-secondary text-glow-blue">Certificações</h2>
-              <Card className="p-6 border-glow-blue bg-card/50 backdrop-blur-sm">
+              <h2 className="text-3xl font-bold mb-8 text-secondary text-glow-blue hover-shake cursor-default">Certificações</h2>
+              <Card className="p-6 border-glow-blue bg-card/50 backdrop-blur-sm card-hover hover-glow-blue-intense wave-effect">
                 <ul className="space-y-3">
                   {certifications.map((cert, index) => (
-                    <li key={index} className="flex items-start gap-2 text-foreground">
-                      <span className="text-secondary mt-1">✓</span>
-                      <span>{cert}</span>
+                    <li key={index} className="flex items-start gap-2 text-foreground hover:text-secondary hover:bg-secondary/10 p-2 rounded-lg transition-all duration-300 group/cert">
+                      <span className="text-secondary mt-1 group-hover/cert:scale-125 transition-transform duration-200">✓</span>
+                      <span className="group-hover/cert:translate-x-1 transition-transform duration-200">{cert}</span>
                     </li>
                   ))}
                 </ul>
@@ -242,33 +242,33 @@ const Index = () => {
       {/* Contact Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-glow-green">Contato</h2>
-          <Card className="p-8 border-glow-blue glow-blue bg-card/50 backdrop-blur-sm max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Contato</h2>
+          <Card className="p-8 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm max-w-2xl mx-auto group">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-lg">
-                <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+5567991616239" className="hover:text-primary transition-colors">
+              <div className="flex items-center gap-3 text-lg hover:bg-primary/10 p-2 rounded-lg transition-all duration-300 group/phone">
+                <Phone className="h-5 w-5 text-primary group-hover/phone:scale-125 transition-transform duration-300" />
+                <a href="tel:+5567991616239" className="hover:text-primary transition-colors group-hover/phone:translate-x-2 transition-transform duration-300">
                   (67) 99161-6239
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-lg">
-                <MapPin className="h-5 w-5 text-secondary" />
-                <span>Campo Grande/MS</span>
+              <div className="flex items-center gap-3 text-lg hover:bg-secondary/10 p-2 rounded-lg transition-all duration-300 group/location">
+                <MapPin className="h-5 w-5 text-secondary group-hover/location:scale-125 transition-transform duration-300" />
+                <span className="group-hover/location:translate-x-2 transition-transform duration-300">Campo Grande/MS</span>
               </div>
               <div className="flex gap-3 pt-4">
-                <Button asChild className="flex-1 glow-green hover:scale-105 transition-transform">
+                <Button asChild className="flex-1 btn-glow glow-green hover:scale-110 transition-all duration-300">
                   <a href="mailto:Fxbastian88@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
                     Email
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="flex-1 border-glow-blue hover:glow-blue transition-all">
+                <Button asChild variant="outline" className="flex-1 btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
                   <a href="https://www.linkedin.com/in/felix-bastian-9b7573287" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-4 w-4" />
                     LinkedIn
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="flex-1 border-glow-blue hover:glow-blue transition-all">
+                <Button asChild variant="outline" className="flex-1 btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
                   <a href="https://www.instagram.com/flexbastian777" target="_blank" rel="noopener noreferrer">
                     <Instagram className="mr-2 h-4 w-4" />
                     Instagram

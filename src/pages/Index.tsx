@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Github, Linkedin, Code2, Database, Network, Cpu } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.png";
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Code2, Database, Network, Cpu } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpeg";
 
 const Index = () => {
   const skills = [
@@ -81,7 +81,7 @@ const Index = () => {
                   <div className="rounded-full p-2 bg-background">
                     <img
                       src={profilePhoto}
-                      alt="Félix Sebastião"
+                      alt="Felix Bastian"
                       className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background"
                     />
                   </div>
@@ -91,7 +91,7 @@ const Index = () => {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-glow-green">
-              Félix Sebastião
+              Felix Bastian
             </h1>
             <p className="text-2xl md:text-3xl text-secondary text-glow-blue font-semibold">
               Assistente de TI & Desenvolvedor
@@ -101,13 +101,17 @@ const Index = () => {
               e soluções tecnológicas eficientes
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-6">
-              <Button className="glow-green hover:scale-105 transition-transform">
-                <Mail className="mr-2 h-4 w-4" />
-                Entre em Contato
+              <Button asChild className="glow-green hover:scale-105 transition-transform">
+                <a href="mailto:Fxbastian88@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Entre em Contato
+                </a>
               </Button>
-              <Button variant="outline" className="border-glow-blue hover:glow-blue transition-all">
-                <Github className="mr-2 h-4 w-4" />
-                Projetos
+              <Button asChild variant="outline" className="border-glow-blue hover:glow-blue transition-all">
+                <a href="https://github.com/bastianFlex" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-4 w-4" />
+                  Projetos
+                </a>
               </Button>
             </div>
           </div>
@@ -249,16 +253,26 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-3 text-lg">
                 <MapPin className="h-5 w-5 text-secondary" />
-                <span>Rua Madre Cristina, 298 – Campo Grande/MS</span>
+                <span>Campo Grande/MS</span>
               </div>
-              <div className="flex gap-4 pt-4">
-                <Button className="flex-1 glow-green hover:scale-105 transition-transform">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email
+              <div className="flex gap-3 pt-4">
+                <Button asChild className="flex-1 glow-green hover:scale-105 transition-transform">
+                  <a href="mailto:Fxbastian88@gmail.com">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Email
+                  </a>
                 </Button>
-                <Button variant="outline" className="flex-1 border-glow-blue hover:glow-blue transition-all">
-                  <Linkedin className="mr-2 h-4 w-4" />
-                  LinkedIn
+                <Button asChild variant="outline" className="flex-1 border-glow-blue hover:glow-blue transition-all">
+                  <a href="https://www.linkedin.com/in/felix-bastian-9b7573287" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="mr-2 h-4 w-4" />
+                    LinkedIn
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="flex-1 border-glow-blue hover:glow-blue transition-all">
+                  <a href="https://www.instagram.com/flexbastian777" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="mr-2 h-4 w-4" />
+                    Instagram
+                  </a>
                 </Button>
               </div>
             </div>
@@ -269,7 +283,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">
         <div className="container mx-auto max-w-6xl text-center text-muted-foreground">
-          <p>© 2024 Félix Sebastião dos Santos. Todos os direitos reservados.</p>
+          <p>© 2024 Felix Bastian. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

@@ -6,7 +6,7 @@ import profilePhoto from "@/assets/profile-photo.jpeg";
 import { useState } from "react";
 
 const Index = () => {
-  const [fanSpeed, setFanSpeed] = useState(1);
+  // Disco girando automaticamente na velocidade 2
 
   const skills = [
     { name: "Frontend", tech: ["React", "TypeScript", "JavaScript", "HTML/CSS"], icon: Code2 },
@@ -78,25 +78,21 @@ const Index = () => {
           <div className="text-center space-y-6 animate-slide-up">
             {/* Profile Photo */}
             <div className="flex justify-center mb-8">
-              <div className={`relative animate-float hover-glow-intense pulse-glow fan-level-${fanSpeed}`}>
-                {/* Disco Ventilador com Raios */}
-                <div className={`absolute inset-0 fan-disk-with-rays fan-disk-level-${fanSpeed}`}>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-glow-pulse blur-xl opacity-75" />
-                </div>
-                
-                {/* Controlador de Velocidade */}
-                <div className="fan-speed-controller">
-                  {[1, 2, 3, 4].map((speed) => (
-                    <button
-                      key={speed}
-                      className={`fan-speed-btn ${fanSpeed === speed ? 'active' : ''}`}
-                      onClick={() => setFanSpeed(speed)}
-                      title={`Velocidade ${speed}`}
-                    />
-                  ))}
+              <div className="relative animate-float hover-glow-intense pulse-glow">
+                {/* Disco Ventilador Girando */}
+                <div className="absolute -inset-6 fan-disk fan-speed-2">
+                  <div className="w-full h-full rounded-full bg-gradient-to-r from-primary/30 via-secondary/50 to-primary/30 blur-lg"></div>
+                  <div className="absolute inset-2 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-green-500/20 blur-md"></div>
+                  {/* Raios do disco */}
+                  <div className="absolute inset-0 rounded-full">
+                    <div className="absolute top-0 left-1/2 w-px h-full bg-primary/60 transform -translate-x-1/2"></div>
+                    <div className="absolute top-1/2 left-0 w-full h-px bg-primary/60 transform -translate-y-1/2"></div>
+                    <div className="absolute top-1/2 left-1/2 w-full h-px bg-secondary/40 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
+                    <div className="absolute top-1/2 left-1/2 w-full h-px bg-secondary/40 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+                  </div>
                 </div>
 
-                {/* Imagem Principal (sempre estática) */}
+                {/* Imagem Principal */}
                 <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary z-10">
                   <div className="rounded-full p-2 bg-background">
                     <img

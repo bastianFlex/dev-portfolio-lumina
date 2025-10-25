@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Code2, Database, Network, Cpu } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Github, Linkedin, Instagram, Code2, Database, Network, Cpu } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpeg";
 import { useState } from "react";
 
@@ -263,10 +263,10 @@ const Index = () => {
           <h2 className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Contato</h2>
           <Card className="p-4 sm:p-8 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm max-w-2xl mx-auto group">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-primary/10 p-3 rounded-lg transition-all duration-300 group/phone">
-                <Phone className="h-5 w-5 text-primary group-hover/phone:scale-125 transition-transform duration-300 flex-shrink-0" />
-                <a href="tel:+5567991616239" className="hover:text-primary transition-colors group-hover/phone:translate-x-2 transition-transform duration-300">
-                  (67) 99161-6239
+              <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-green-600/10 p-3 rounded-lg transition-all duration-300 group/whatsapp">
+                <MessageCircle className="h-5 w-5 text-green-500 group-hover/whatsapp:scale-125 transition-transform duration-300 flex-shrink-0" />
+                <a href="https://wa.me/5567991616239" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors group-hover/whatsapp:translate-x-2 transition-transform duration-300">
+                  WhatsApp: (67) 99161-6239
                 </a>
               </div>
               <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-secondary/10 p-3 rounded-lg transition-all duration-300 group/location">

@@ -8,6 +8,8 @@ import { useState } from "react";
 const Index = () => {
   // Disco girando automaticamente na velocidade 2
 
+  // Music player removido temporariamente - foco no portfólio principal
+
   const skills = [
     { name: "Frontend", tech: ["React", "TypeScript", "JavaScript", "HTML/CSS"], icon: Code2 },
     { name: "Backend", tech: ["Python", "Lua", "Node.js"], icon: Cpu },
@@ -305,6 +307,8 @@ const Index = () => {
           <p>© 2024 Felix Bastian. Todos os direitos reservados.</p>
         </div>
       </footer>
+
+      {/* Music Player removido temporariamente */}
     </div>
   );
 };

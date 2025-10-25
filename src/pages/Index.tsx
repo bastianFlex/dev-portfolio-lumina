@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Github, Linkedin, Code2, Database, Network, Cpu } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Index = () => {
   const skills = [
@@ -72,6 +73,23 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-6 animate-slide-up">
+            {/* Profile Photo */}
+            <div className="flex justify-center mb-8">
+              <div className="relative animate-float">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-glow-pulse blur-xl opacity-75" />
+                <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary">
+                  <div className="rounded-full p-2 bg-background">
+                    <img
+                      src={profilePhoto}
+                      alt="Félix Sebastião"
+                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -inset-4 rounded-full border-2 border-primary/30 animate-glow-pulse" />
+                <div className="absolute -inset-8 rounded-full border border-secondary/20 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
+              </div>
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold text-glow-green">
               Félix Sebastião
             </h1>

@@ -261,33 +261,34 @@ const Index = () => {
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Contato</h2>
-          <Card className="p-8 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm max-w-2xl mx-auto group">
+          <Card className="p-4 sm:p-8 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm max-w-2xl mx-auto group">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-lg hover:bg-primary/10 p-2 rounded-lg transition-all duration-300 group/phone">
-                <Phone className="h-5 w-5 text-primary group-hover/phone:scale-125 transition-transform duration-300" />
+              <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-primary/10 p-3 rounded-lg transition-all duration-300 group/phone">
+                <Phone className="h-5 w-5 text-primary group-hover/phone:scale-125 transition-transform duration-300 flex-shrink-0" />
                 <a href="tel:+5567991616239" className="hover:text-primary transition-colors group-hover/phone:translate-x-2 transition-transform duration-300">
                   (67) 99161-6239
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-lg hover:bg-secondary/10 p-2 rounded-lg transition-all duration-300 group/location">
-                <MapPin className="h-5 w-5 text-secondary group-hover/location:scale-125 transition-transform duration-300" />
+              <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-secondary/10 p-3 rounded-lg transition-all duration-300 group/location">
+                <MapPin className="h-5 w-5 text-secondary group-hover/location:scale-125 transition-transform duration-300 flex-shrink-0" />
                 <span className="group-hover/location:translate-x-2 transition-transform duration-300">Campo Grande/MS</span>
               </div>
-              <div className="flex gap-3 pt-4">
-                <Button asChild className="flex-1 btn-glow glow-green hover:scale-110 transition-all duration-300">
-                  <a href="mailto:Fxbastian88@gmail.com">
+              {/* Botões Mobile-First */}
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                <Button asChild className="w-full sm:flex-1 btn-glow glow-green hover:scale-105 transition-all duration-300">
+                  <a href="mailto:Fxbastian88@gmail.com" className="flex items-center justify-center">
                     <Mail className="mr-2 h-4 w-4" />
                     Email
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="flex-1 btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
-                  <a href="https://www.linkedin.com/in/felix-bastian-9b7573287" target="_blank" rel="noopener noreferrer">
+                <Button asChild variant="outline" className="w-full sm:flex-1 btn-glow border-glow-blue hover-glow-blue-intense hover:scale-105 transition-all duration-300">
+                  <a href="https://www.linkedin.com/in/felix-bastian-9b7573287" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                     <Linkedin className="mr-2 h-4 w-4" />
                     LinkedIn
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="flex-1 btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
-                  <a href="https://www.instagram.com/flexbastian777" target="_blank" rel="noopener noreferrer">
+                <Button asChild variant="outline" className="w-full sm:flex-1 btn-glow border-glow-blue hover-glow-blue-intense hover:scale-105 transition-all duration-300">
+                  <a href="https://www.instagram.com/flexbastian777" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                     <Instagram className="mr-2 h-4 w-4" />
                     Instagram
                   </a>

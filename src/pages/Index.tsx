@@ -73,8 +73,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background floating-particles">
+      {/* Skip Link para Acessibilidade */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-background focus:rounded-md focus:font-medium"
+      >
+        Ir para o conteúdo principal
+      </a>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-6">
+      <header className="relative overflow-hidden py-20 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-6 animate-slide-up">
@@ -121,27 +129,35 @@ const Index = () => {
               e soluções tecnológicas eficientes
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-6">
-              <Button asChild className="btn-glow glow-green hover:scale-110 transition-all duration-300">
-                <a href="mailto:Fxbastian88@gmail.com">
+              <Button asChild className="btn-glow glow-green hover:scale-110 transition-all duration-300" aria-label="Baixar CV do Felix Bastian">
+                <a href="/cv-felix-bastian.pdf" download>
                   <Mail className="mr-2 h-4 w-4" />
-                  Entre em Contato
+                  Baixar CV
                 </a>
               </Button>
-              <Button asChild variant="outline" className="btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300">
-                <a href="https://github.com/bastianFlex" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
-                  Projetos
+              <Button asChild variant="outline" className="btn-glow border-glow-blue hover-glow-blue-intense transition-all duration-300" aria-label="Ver projetos no GitHub">
+                <a href="#projetos">
+                  <Code2 className="mr-2 h-4 w-4" />
+                  Ver Projetos
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="btn-glow border-glow-green hover-glow-green-intense transition-all duration-300" aria-label="Entre em contato via WhatsApp">
+                <a href="#contato">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Fale Comigo
                 </a>
               </Button>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* About Section */}
-      <section className="py-16 px-6">
+      {/* Conteúdo Principal */}
+      <main id="main-content">
+        {/* About Section */}
+      <section id="sobre" className="py-16 px-6" aria-labelledby="about-heading">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green">Sobre Mim</h2>
+          <h2 id="about-heading" className="text-3xl font-bold mb-8 text-primary text-glow-green">Sobre Mim</h2>
           <Card className="p-8 border-glow-blue bg-card/50 backdrop-blur-sm">
             <p className="text-lg leading-relaxed text-foreground">
               Profissional com experiência nas áreas de tecnologia, suporte técnico, manutenção de
@@ -156,9 +172,9 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-6 bg-muted/30">
+      <section id="habilidades" className="py-16 px-6 bg-muted/30" aria-labelledby="skills-heading">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Habilidades Técnicas</h2>
+          <h2 id="skills-heading" className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Habilidades Técnicas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
@@ -186,9 +202,9 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-16 px-6">
+      <section id="experiencia" className="py-16 px-6" aria-labelledby="experience-heading">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Experiência Profissional</h2>
+          <h2 id="experience-heading" className="text-3xl font-bold mb-8 text-primary text-glow-green hover-shake cursor-default">Experiência Profissional</h2>
           <div className="space-y-6">
             {experience.map((exp, index) => (
               <Card
@@ -259,10 +275,128 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 px-6">
+      {/* Projects Section */}
+      <section id="projetos" className="py-16 px-6" aria-labelledby="projects-heading">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Contato</h2>
+          <h2 id="projects-heading" className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Projetos</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            
+            {/* Projeto 1 - Portfólio Interativo */}
+            <Card className="p-6 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm group">
+              <div className="space-y-4">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center border border-primary/30">
+                  <Code2 className="h-12 w-12 text-primary" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-primary group-hover:text-glow-blue transition-all duration-300">
+                  Portfólio Interativo com Animações
+                </h3>
+                
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div>
+                    <strong className="text-secondary">Problema:</strong> Necessidade de um portfólio que se destaque visualmente e demonstre habilidades técnicas.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Solução:</strong> Desenvolvimento de interface com animações CSS avançadas, disco girando e efeitos neon responsivos.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Meu Papel:</strong> Full-stack Developer - Design, desenvolvimento e deploy completo.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Resultado:</strong> 100% responsivo, otimizado para SEO e acessibilidade AA.
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">React</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">TypeScript</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Tailwind CSS</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Vite</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Vercel</Badge>
+                </div>
+                
+                <div className="flex gap-3 pt-2">
+                  <Button asChild size="sm" className="btn-glow glow-green">
+                    <a href="https://dev-portfolio-bastian.vercel.app" target="_blank" rel="noopener noreferrer">
+                      Demo Live
+                    </a>
+                  </Button>
+                  <Button asChild size="sm" variant="outline" className="btn-glow border-glow-blue">
+                    <a href="https://github.com/bastianFlex/dev-portfolio-lumina" target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-3 w-3" />
+                      Código
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            {/* Projeto 2 - Sistema de Suporte */}
+            <Card className="p-6 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm group">
+              <div className="space-y-4">
+                <div className="aspect-video bg-gradient-to-br from-secondary/20 to-primary/20 rounded-lg flex items-center justify-center border border-secondary/30">
+                  <Network className="h-12 w-12 text-secondary" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-primary group-hover:text-glow-blue transition-all duration-300">
+                  Sistema de Análise de Redes
+                </h3>
+                
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div>
+                    <strong className="text-secondary">Problema:</strong> Dificuldade em monitorar e diagnosticar problemas de rede em tempo real.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Solução:</strong> Dashboard com monitoramento em tempo real, alertas automáticos e relatórios detalhados.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Meu Papel:</strong> Desenvolvedor Frontend e Analista de Sistemas - Interface e integração com APIs.
+                  </div>
+                  <div>
+                    <strong className="text-secondary">Resultado:</strong> Redução de 60% no tempo de diagnóstico de problemas de rede.
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">JavaScript</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Node.js</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Python</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Socket.io</Badge>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary">Docker</Badge>
+                </div>
+                
+                <div className="flex gap-3 pt-2">
+                  <Button asChild size="sm" className="btn-glow glow-green" disabled>
+                    <span>Projeto Interno</span>
+                  </Button>
+                  <Button asChild size="sm" variant="outline" className="btn-glow border-glow-blue">
+                    <a href="#contact">
+                      <MessageCircle className="mr-2 h-3 w-3" />
+                      Saiba Mais
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">Interessado em colaborar? Vamos conversar!</p>
+            <Button asChild className="btn-glow glow-green hover:scale-110 transition-all duration-300">
+              <a href="#contact">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Entre em Contato
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contato" className="py-16 px-6" aria-labelledby="contact-heading">
+        <div className="container mx-auto max-w-6xl">
+          <h2 id="contact-heading" className="text-3xl font-bold mb-8 text-center text-primary text-glow-green hover-shake cursor-default">Contato</h2>
           <Card className="p-4 sm:p-8 border-glow-blue card-hover hover-glow-blue-intense bg-card/50 backdrop-blur-sm max-w-2xl mx-auto group">
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-base sm:text-lg hover:bg-green-600/10 p-3 rounded-lg transition-all duration-300 group/whatsapp">
@@ -300,6 +434,7 @@ const Index = () => {
           </Card>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">

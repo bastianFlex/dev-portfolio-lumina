@@ -3,8 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Code2, Database, Network, Cpu } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpeg";
+import { useState } from "react";
 
 const Index = () => {
+  const [fanSpeed, setFanSpeed] = useState(1);
+
   const skills = [
     { name: "Frontend", tech: ["React", "TypeScript", "JavaScript", "HTML/CSS"], icon: Code2 },
     { name: "Backend", tech: ["Python", "Lua", "Node.js"], icon: Cpu },
@@ -75,19 +78,38 @@ const Index = () => {
           <div className="text-center space-y-6 animate-slide-up">
             {/* Profile Photo */}
             <div className="flex justify-center mb-8">
-              <div className="relative animate-float hover-glow-intense pulse-glow">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-glow-pulse blur-xl opacity-75" />
-                <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary">
+              <div className={`relative animate-float hover-glow-intense pulse-glow fan-level-${fanSpeed}`}>
+                {/* Disco Ventilador com Raios */}
+                <div className={`absolute inset-0 fan-disk-with-rays fan-disk-level-${fanSpeed}`}>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary animate-glow-pulse blur-xl opacity-75" />
+                </div>
+                
+                {/* Controlador de Velocidade */}
+                <div className="fan-speed-controller">
+                  {[1, 2, 3, 4].map((speed) => (
+                    <button
+                      key={speed}
+                      className={`fan-speed-btn ${fanSpeed === speed ? 'active' : ''}`}
+                      onClick={() => setFanSpeed(speed)}
+                      title={`Velocidade ${speed}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Imagem Principal (sempre estática) */}
+                <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary z-10">
                   <div className="rounded-full p-2 bg-background">
                     <img
                       src={profilePhoto}
                       alt="Felix Bastian"
-                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background hover-rotate"
+                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
-                <div className="absolute -inset-4 rounded-full border-2 border-primary/30 animate-glow-pulse" />
-                <div className="absolute -inset-8 rounded-full border border-secondary/20 animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
+                
+                {/* Anéis Externos */}
+                <div className="absolute -inset-4 rounded-full border-2 border-primary/30 animate-glow-pulse z-5" />
+                <div className="absolute -inset-8 rounded-full border border-secondary/20 animate-glow-pulse z-5" style={{ animationDelay: "0.5s" }} />
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-glow-green hover-shake cursor-default">

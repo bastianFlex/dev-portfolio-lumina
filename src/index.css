@@ -247,4 +247,142 @@ All colors MUST be HSL.
     25% { transform: translateX(-2px); }
     75% { transform: translateX(2px); }
   }
+
+  /* Animações do Disco Ventilador */
+  .fan-disk-level-1 {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .fan-disk-level-2 {
+    animation: spin-medium 4s linear infinite;
+  }
+
+  .fan-disk-level-3 {
+    animation: spin-fast 2s linear infinite;
+  }
+
+  .fan-disk-level-4 {
+    animation: spin-ultra-fast 1s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-medium {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-fast {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-ultra-fast {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Disco com Raios */
+  .fan-disk-with-rays {
+    position: relative;
+  }
+
+  .fan-disk-with-rays::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    background: 
+      linear-gradient(0deg, transparent 45%, hsl(var(--neon-green) / 0.8) 48%, hsl(var(--neon-green) / 0.9) 50%, hsl(var(--neon-green) / 0.8) 52%, transparent 55%),
+      linear-gradient(45deg, transparent 45%, hsl(var(--neon-blue) / 0.6) 48%, hsl(var(--neon-blue) / 0.7) 50%, hsl(var(--neon-blue) / 0.6) 52%, transparent 55%),
+      linear-gradient(90deg, transparent 45%, hsl(var(--neon-green) / 0.8) 48%, hsl(var(--neon-green) / 0.9) 50%, hsl(var(--neon-green) / 0.8) 52%, transparent 55%),
+      linear-gradient(135deg, transparent 45%, hsl(var(--neon-blue) / 0.6) 48%, hsl(var(--neon-blue) / 0.7) 50%, hsl(var(--neon-blue) / 0.6) 52%, transparent 55%),
+      linear-gradient(180deg, transparent 45%, hsl(var(--neon-green) / 0.8) 48%, hsl(var(--neon-green) / 0.9) 50%, hsl(var(--neon-green) / 0.8) 52%, transparent 55%),
+      linear-gradient(225deg, transparent 45%, hsl(var(--neon-blue) / 0.6) 48%, hsl(var(--neon-blue) / 0.7) 50%, hsl(var(--neon-blue) / 0.6) 52%, transparent 55%),
+      linear-gradient(270deg, transparent 45%, hsl(var(--neon-green) / 0.8) 48%, hsl(var(--neon-green) / 0.9) 50%, hsl(var(--neon-green) / 0.8) 52%, transparent 55%),
+      linear-gradient(315deg, transparent 45%, hsl(var(--neon-blue) / 0.6) 48%, hsl(var(--neon-blue) / 0.7) 50%, hsl(var(--neon-blue) / 0.6) 52%, transparent 55%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Raios secundários */
+  .fan-disk-with-rays::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: 
+      linear-gradient(22.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(67.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(112.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(157.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(202.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(247.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(292.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%),
+      linear-gradient(337.5deg, transparent 47%, hsl(var(--neon-cyan) / 0.4) 49%, hsl(var(--neon-cyan) / 0.5) 50%, hsl(var(--neon-cyan) / 0.4) 51%, transparent 53%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -2;
+  }
+
+  /* Efeitos de nível */
+  .fan-level-1 .fan-disk-with-rays::before {
+    opacity: 0.3;
+  }
+
+  .fan-level-2 .fan-disk-with-rays::before {
+    opacity: 0.5;
+  }
+
+  .fan-level-3 .fan-disk-with-rays::before {
+    opacity: 0.7;
+  }
+
+  .fan-level-4 .fan-disk-with-rays::before {
+    opacity: 0.9;
+    box-shadow: 0 0 50px hsl(var(--neon-green) / 0.8);
+  }
+
+  /* Controlador de velocidade */
+  .fan-speed-controller {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    display: flex;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid hsl(var(--neon-green) / 0.3);
+  }
+
+  .fan-speed-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid hsl(var(--neon-green) / 0.5);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .fan-speed-btn.active {
+    background: hsl(var(--neon-green));
+    box-shadow: 0 0 10px hsl(var(--neon-green) / 0.8);
+  }
+
+  .fan-speed-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px hsl(var(--neon-green) / 0.6);
+  }
 }

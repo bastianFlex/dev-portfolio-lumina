@@ -77,10 +77,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-6 animate-slide-up">
             {/* Profile Photo */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-10 py-4">
               <div className="relative animate-float hover-glow-intense pulse-glow">
                 {/* Disco Ventilador Girando */}
-                <div className="absolute -inset-6 fan-disk fan-speed-2">
+                <div className="absolute -inset-8 fan-disk fan-speed-2">
                   <div className="w-full h-full rounded-full bg-gradient-to-r from-primary/30 via-secondary/50 to-primary/30 blur-lg"></div>
                   <div className="absolute inset-2 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/30 to-green-500/20 blur-md"></div>
                   {/* Raios do disco */}
@@ -92,20 +92,20 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Imagem Principal */}
+                {/* Imagem Principal - Tamanho Equilibrado */}
                 <div className="relative rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-primary z-10">
                   <div className="rounded-full p-2 bg-background">
                     <img
                       src={profilePhoto}
                       alt="Felix Bastian"
-                      className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background hover:scale-105 transition-transform duration-300"
+                      className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-background hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
                 
                 {/* Anéis Externos */}
-                <div className="absolute -inset-4 rounded-full border-2 border-primary/30 animate-glow-pulse z-5" />
-                <div className="absolute -inset-8 rounded-full border border-secondary/20 animate-glow-pulse z-5" style={{ animationDelay: "0.5s" }} />
+                <div className="absolute -inset-5 rounded-full border-2 border-primary/30 animate-glow-pulse z-5" />
+                <div className="absolute -inset-10 rounded-full border border-secondary/20 animate-glow-pulse z-5" style={{ animationDelay: "0.5s" }} />
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-glow-green hover-shake cursor-default">
